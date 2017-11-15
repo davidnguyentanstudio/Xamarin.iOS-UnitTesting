@@ -21,10 +21,10 @@ namespace TableView.ViewModels
 
         public void TogglePersonDetail(Person person, Action<Person> didTogglePersonDetail)
         {
-            var isShowingDetail = detailedPersons.Contains(person);
-            if (isShowingDetail)
+            var matchedIndex = detailedPersons.IndexOf(person);
+            var isShowingPersonDetail = matchedIndex != -1;
+            if (isShowingPersonDetail)
             {
-                var matchedIndex = detailedPersons.IndexOf(person);
                 detailedPersons.RemoveAt(matchedIndex);
             }
             else
