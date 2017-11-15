@@ -30,32 +30,52 @@ namespace TableView.Test
         }
 
         [Test]
-        public void TogglePersonDetail_ResultIsOn_Correct()
+        public void TogglePersonDetail_TurnPersonOnWithCallBack_Correct()
         {
             var person = new Person("David", "Nguyentan", new DateTime(1992, 08, 03), Gender.Male);
-            var persons = new List<Person> { person };
-            var emptyPersons = new List<Person>();
-            var viewModel = new PersonsViewModel(persons, emptyPersons);
+            var viewModel = new PersonsViewModel(new List<Person> { person }, new List<Person>());
             viewModel.TogglePersonDetail(person, (callbackPerson) =>
             {
                 Assert.AreSame(person, callbackPerson);
                 Assert.True(viewModel.IsShowingDetailForPerson(callbackPerson));
             });
+            Assert.True(viewModel.IsShowingDetailForPerson(person));
         }
-        public void TogglePersonDetail_ResultIsOff_Correct()
+
+        [Test]
+        public void TogglePersonDetail_TurnPersonOnWithoutCallBack_Correct()
         {
             var person = new Person("David", "Nguyentan", new DateTime(1992, 08, 03), Gender.Male);
-            var persons = new List<Person> { person };
-            var viewModel = new PersonsViewModel(persons, persons);
+            var viewModel = new PersonsViewModel(new List<Person> { person }, new List<Person>());
+            viewModel.TogglePersonDetail(person, null);
+            Assert.True(viewModel.IsShowingDetailForPerson(person));
+        }
+
+        [Test]
+        public void TogglePersonDetail_TurnPersonOffWithCallBack_Correct()
+        {
+            var person = new Person("David", "Nguyentan", new DateTime(1992, 08, 03), Gender.Male);
+            var viewModel = new PersonsViewModel(new List<Person> { person }, new List<Person> { person });
             viewModel.TogglePersonDetail(person, (callbackPerson) =>
             {
                 Assert.AreSame(person, callbackPerson);
                 Assert.False(viewModel.IsShowingDetailForPerson(callbackPerson));
             });
+            Assert.False(viewModel.IsShowingDetailForPerson(person));
         }
 
         [Test]
-        public void GetDetailForPerson_Result_Correct() {
+        public void TogglePersonDetail_TurnPersonOffWithoutCallBack_Correct()
+        {
+            var person = new Person("David", "Nguyentan", new DateTime(1992, 08, 03), Gender.Male);
+            var viewModel = new PersonsViewModel(new List<Person> { person }, new List<Person> { person });
+            viewModel.TogglePersonDetail(person, null);
+            Assert.False(viewModel.IsShowingDetailForPerson(person));
+        }
+
+        [Test]
+        public void GetDetailForPerson_Result_Correct()
+        {
             var person = new Person("David", "Nguyentan", new DateTime(1992, 08, 03), Gender.Male);
             var persons = new List<Person> { person };
             var emptyPersons = new List<Person>();
