@@ -9,14 +9,12 @@ namespace TableView.ViewModels
     {
         public PersonsViewModel()
         {
-            this.persons = new List<Person>();
-            this.detailedPersons = new List<Person>();
         }
 
         public PersonsViewModel(List<Person> persons, List<Person> detailedPersons)
         {
-            this.persons = persons ?? new List<Person>();
-            this.detailedPersons = detailedPersons ?? new List<Person>();
+            this.persons = persons;
+            this.detailedPersons = detailedPersons;
         }
 
         public void TogglePersonDetail(Person person, Action<Person> didTogglePersonDetail)
@@ -46,8 +44,9 @@ namespace TableView.ViewModels
         }
 
         private List<Person> persons;
+        private List<Person> persons = new List<Person>();
         public List<Person> Persons { get => persons; set => persons = value; }
 
-        protected List<Person> detailedPersons;
+        protected List<Person> detailedPersons = new List<Person>();
     }
 }
