@@ -5,6 +5,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TableView", "TableView\Tabl
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TableView.Test", "TableView.Test\TableView.Test.csproj", "{277225EE-977C-4BF8-89B6-C486AC93B566}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TableView.UITest", "TableView.UITest\TableView.UITest.csproj", "{2C7A2948-C58B-402B-926F-02AA5E506939}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|iPhoneSimulator = Debug|iPhoneSimulator
@@ -29,5 +31,13 @@ Global
 		{277225EE-977C-4BF8-89B6-C486AC93B566}.Release|iPhoneSimulator.Build.0 = Release|iPhoneSimulator
 		{277225EE-977C-4BF8-89B6-C486AC93B566}.Debug|iPhone.ActiveCfg = Debug|iPhone
 		{277225EE-977C-4BF8-89B6-C486AC93B566}.Debug|iPhone.Build.0 = Debug|iPhone
+		{2C7A2948-C58B-402B-926F-02AA5E506939}.Debug|iPhoneSimulator.ActiveCfg = Debug|Any CPU
+		{2C7A2948-C58B-402B-926F-02AA5E506939}.Debug|iPhoneSimulator.Build.0 = Debug|Any CPU
+		{2C7A2948-C58B-402B-926F-02AA5E506939}.Release|iPhone.ActiveCfg = Release|Any CPU
+		{2C7A2948-C58B-402B-926F-02AA5E506939}.Release|iPhone.Build.0 = Release|Any CPU
+		{2C7A2948-C58B-402B-926F-02AA5E506939}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
+		{2C7A2948-C58B-402B-926F-02AA5E506939}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
+		{2C7A2948-C58B-402B-926F-02AA5E506939}.Debug|iPhone.ActiveCfg = Debug|Any CPU
+		{2C7A2948-C58B-402B-926F-02AA5E506939}.Debug|iPhone.Build.0 = Debug|Any CPU
 	EndGlobalSection
 EndGlobal

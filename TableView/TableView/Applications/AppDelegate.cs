@@ -20,6 +20,10 @@ namespace TableView
 
         public override bool FinishedLaunching(UIApplication application, NSDictionary launchOptions)
         {
+#if ENABLE_TEST_CLOUD
+            Xamarin.Calabash.Start();
+#endif
+
             this.Window = GetDefaultWindow();
             this.Window.RootViewController = new UINavigationController(new PersonsViewController());
             this.Window.MakeKeyAndVisible();
