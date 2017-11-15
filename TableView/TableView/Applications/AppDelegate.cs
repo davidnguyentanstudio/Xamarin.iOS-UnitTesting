@@ -21,7 +21,7 @@ namespace TableView
         public override bool FinishedLaunching(UIApplication application, NSDictionary launchOptions)
         {
             this.Window = GetDefaultWindow();
-            this.Window.RootViewController = new PersonsViewController();
+            this.Window.RootViewController = new UINavigationController(new PersonsViewController());
             this.Window.MakeKeyAndVisible();
 
             return true;

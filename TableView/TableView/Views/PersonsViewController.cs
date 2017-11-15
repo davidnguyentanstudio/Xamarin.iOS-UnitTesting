@@ -27,6 +27,13 @@ namespace TableView.Views
             SetupComponentViews();
         }
 
+        public override void ViewWillAppear(bool animated)
+        {
+            base.ViewWillAppear(animated);
+
+            Title = "Persons";
+        }
+
         public nint RowsInSection(UITableView tableView, nint section)
         {
             return viewModel.Persons.Count;
