@@ -32,6 +32,7 @@ namespace TableView.Views
             base.ViewWillAppear(animated);
 
             Title = "Persons";
+            NavigationItem.RightBarButtonItem = new UIBarButtonItem(UIBarButtonSystemItem.Add, HandleRightBarButtonTapped);
         }
 
         public nint RowsInSection(UITableView tableView, nint section)
@@ -88,6 +89,16 @@ namespace TableView.Views
         {
             this.PersonTableView.Source = new BaseTableViewSource(this, this);
             this.PersonTableView.TableFooterView = new UIView();
+        }
+
+        protected void HandleRightBarButtonTapped(object sender, EventArgs e) {
+            ShowEditPersonViewController(null);
+        }
+
+        protected void ShowEditPersonViewController(Person person)
+        {
+            var editPersonViewController = new EditPersonViewController();
+            NavigationController.ShowViewController(editPersonViewController, null);
         }
 
         protected PersonsViewModel viewModel = new PersonsViewModel();

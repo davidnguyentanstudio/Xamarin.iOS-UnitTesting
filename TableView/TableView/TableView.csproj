@@ -101,6 +101,7 @@
     <InterfaceDefinition Include="Views\PersonsViewController.xib" />
     <InterfaceDefinition Include="Views\Main.storyboard" />
     <InterfaceDefinition Include="Views\LaunchScreen.storyboard" />
+    <InterfaceDefinition Include="Views\EditPersonViewController.xib" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Info.plist" />
@@ -119,6 +120,10 @@
     <Compile Include="ViewModels\PersonsViewModel.cs" />
     <Compile Include="Abtractions\IBaseViewModel.cs" />
     <Compile Include="Main.cs" />
+    <Compile Include="Views\EditPersonViewController.cs" />
+    <Compile Include="Views\EditPersonViewController.designer.cs">
+      <DependentUpon>EditPersonViewController.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\.DS_Store" />
