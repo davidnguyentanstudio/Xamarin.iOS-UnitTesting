@@ -43,8 +43,13 @@ namespace TableView.ViewModels
             return detailedPersons.Contains(person);
         }
 
-        private List<Person> persons;
+#if UI_TESTING && UI_TESTING_MOCK
+        private List<Person> persons = new List<Person> {
+            new Person("David", "Nguyentan", new DateTime(1992, 08, 03), Gender.Male)
+        };
+#else
         private List<Person> persons = new List<Person>();
+#endif
         public List<Person> Persons { get => persons; set => persons = value; }
 
         protected List<Person> detailedPersons = new List<Person>();
