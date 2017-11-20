@@ -124,6 +124,8 @@
     <Compile Include="Views\EditPersonViewController.designer.cs">
       <DependentUpon>EditPersonViewController.cs</DependentUpon>
     </Compile>
+    <Compile Include="ViewModels\EditPersonViewModel.cs" />
+    <Compile Include="Abtractions\IEditPersonViewModel.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
 </Project>

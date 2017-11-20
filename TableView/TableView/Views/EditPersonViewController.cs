@@ -21,6 +21,13 @@ namespace TableView.Views
             base.DidReceiveMemoryWarning();
             // Release any cached data, images, etc that aren't in use.
         }
+
+        public override void ViewWillAppear(bool animated)
+        {
+            base.ViewWillAppear(animated);
+
+            Title = "New Person";
+        }
     }
 }
 
